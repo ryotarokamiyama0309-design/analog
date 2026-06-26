@@ -1,0 +1,149 @@
+\documentclass[11pt,a4paper]{jsarticle}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Packages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}  % 環境
+\usepackage{amssymb}  % 記号
+\usepackage{amsfonts} % 特殊文字
+
+\usepackage{ascmac}
+
+\usepackage{ulem}
+
+\usepackage{lmodern}
+
+\usepackage{bm}
+
+\usepackage{mathtools, centernot, physics}
+
+\usepackage{enumerate}
+
+% \usepackage{graphicx}
+
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{comment} % 複数行をコメントアウトする
+
+\usepackage{url}
+
+\usepackage{array, booktabs, multirow, makecell} % tabular関連
+
+% \usepackage{romannum} % ローマ数字
+
+% \usepackage{xcolor}
+
+\usepackage[dvipdfmx, dvipsnames]{xcolor}
+
+\usepackage{setspace}
+
+\usepackage{float}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Format
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\textwidth}{\fullwidth}
+
+\setlength{\textheight}{40\baselineskip}
+
+\addtolength{\textheight}{\topskip}
+
+\setlength{\voffset}{-0.2in}
+
+\setlength{\topmargin}{0pt}
+
+\setlength{\headheight}{0pt}
+
+\setlength{\headsep}{0pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Definitions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\alert}[1]{\textbf{\textcolor{red}{#1}}}
+
+\newcommand{\rainn}{\textcolor{blue}{\uline{\ \ \ \ }}}
+
+\newcommand{\sizi}[1]{\textcolor{OliveGreen}{\lbrack #1\rbrack}}
+
+
+
+	
+
+\begin{document}
+
+\section{目的}
+トランジスタの静特性(直流特性)を測定し、その入出力インピーダンスのふるまい、増幅動作を理解する。
+
+\section{原理}
+バイポーラトランジスタは、ベース(B)、コレクタ(C)、エミッタ(E)の3端子を有する半導体素子であり、
+小さな入力信号によって大きな出力信号を制御できることから、増幅素子として広く用いられている。
+npn形バイポーラトランジスタでは、ベースーエミッタ間接合が順方向バイアスされ、
+コレクタ－ベース間接合が逆方向バイアスされた状態で動作する。
+
+ベース層は非常に薄く形成されているため、エミッタからベースへ注入された電子の大部分はベース中で再結合することなく
+コレクタへ到達する。このため、コレクタ電流$I_C$は主としてベース－エミッタ間電圧$V_{BE}$によって制御される。
+一方、ベース電流$I_B$は比較的小さく、コレクタ電流との比
+
+\begin{equation}
+h_{FE}=\frac{I_C}{I_B}
+\end{equation}
+
+を直流電流増幅率という。$h_{FE}$が大きいほど、小さなベース電流によって大きなコレクタ電流を制御することができる。
+
+また，トランジスタを微小信号に対して線形素子として扱う際には、入力インピーダンスを表すパラメータとして
+
+\begin{equation}
+h_{ie}=\frac{\Delta V_{BE}}{\Delta I_B}
+\end{equation}
+
+が定義される。同様に、電流増幅率を表すパラメータとして
+
+\begin{equation}
+h_{fe}=\frac{\Delta I_C}{\Delta I_B}
+\end{equation}
+
+が定義される。これらのパラメータは、トランジスタ増幅回路の設計や動作解析において重要な指標となる。
+
+
+\section{方法}
+\subsection{npn形バイポーラトランジスタの $I_{B}$-$V_{BE}$ 静特性測定}
+図に測定系の概略図を示す。
+また、図に配線図を示す。
+
+
+
+npn形バイポーラトランジスタを用いて、$I_B$-$V_{BE}$静特性を測定した。
+測定回路を作成し、$V_{CE}=0\,\mathrm{V}$および$V_{CE}=7.5\,\mathrm{V}$の場合について，
+直流電源により$V_{BE}$を徐々に変化させた。
+そのときのベース電流$I_B$をデジタルマルチメータで読み取り，$V_{BE}$と$I_B$の関係を記録した。
+
+また，$V_{CE}=7.5\,\mathrm{V}$の場合の測定結果を用いて，
+隣り合う測定点の差分から小信号入力インピーダンス$h_{ie}$を求めた。
+
+
+
+\subsection{npn形バイポーラトランジスタの $I_{C}$-$V_{CE}$ 静特性測定}
+図に測定系の概略図を示す。
+また、図に配線図を示す。
+
+
+
+
+
+
+\end{document}
