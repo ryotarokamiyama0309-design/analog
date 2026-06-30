@@ -122,7 +122,7 @@ h_{fe}=\frac{\Delta I_C}{\Delta I_B}
 
 \section{方法}
 \subsection{npn形バイポーラトランジスタの $I_{B}$-$V_{BE}$ 静特性測定}
-図\ref{IbVbezu}に測定系の概略図を示す。
+図\ref{fig:IbVbezu}に測定系の概略図を示す。
 また、図\ref{fig:npn1}に配線図を示す。
 \begin{figure}[H]
     \centering
@@ -139,7 +139,7 @@ h_{fe}=\frac{\Delta I_C}{\Delta I_B}
 \end{figure}
 
 
-npn形バイポーラトランジスタを用いて、$I_B$-$V_{BE}$静特性を測定した。
+npn形バイポーラトランジスタ(2SC1815)を用いて、$I_B$-$V_{BE}$静特性を測定した。
 測定回路を作成し、$V_{CE}=0\,\mathrm{V}$および$V_{CE}=7.5\,\mathrm{V}$の場合について，
 直流電源により$V_{BE}$を徐々に変化させた。
 そのときのベース電流$I_B$をデジタルマルチメータで読み取り，$V_{BE}$と$I_B$の関係を記録した。
@@ -508,6 +508,34 @@ $I_B$ [$\mu$A] & 色 \\
 \label{fig:icvce}
 \end{figure}
 
+$V_{CE}=7.5~\mathrm{V}$における測定結果から、
+隣接する測定点の差分を用いて電流増幅率$h_{fe}$を算出した。
+計算結果を表\ref{tab:hfe}に示す。
+また、計算結果をグラフ化したものを図\ref{fig:hfe}に示す。
+\begin{table}[H]
+\centering
+\caption{$V_{CE}=7.5~\mathrm{V}$における$h_{fe}$の計算結果}
+\label{tab:hfe}
+\begin{tabular}{cc}
+\toprule
+$I_C$ [mA] & $h_{fe}$ \\
+\midrule
+1.005 & 138 \\
+1.700 & 140 \\
+2.400 & 140 \\
+3.100 & 140 \\
+3.810 & 144 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{hfe.png}
+    \caption{$V_{CE}=7.5~\mathrm{V}$における$h_{if}$-$I_{C}$特性}
+    \label{fig:hfe}
+\end{figure}
+
 
 
 \section{考察}
@@ -520,4 +548,113 @@ Oは約110程度となっている。
 本実験では$I_C=1.0～3.8~\mathrm{mA}$において
 $h_{fe}=138～144$が得られたため、
 P.3の特性曲線と比較するとYに近い特性を示していると考えられる。
+
+
+
+\section{課題}
+\subsection{a}
+動画より、ベース，コレクタ，エミッタのGNDからの電位はそれぞれ
+$V_B=2.466~\mathrm{V}$，$V_C=9.58~\mathrm{V}$，
+$V_E=1.800~\mathrm{V}$であった。
+したがって、
+
+\[
+V_{BE}=V_B-V_E=2.466-1.800=0.666~\mathrm{V}
+\]
+
+\[
+V_{CE}=V_C-V_E=9.58-1.800=7.780~\mathrm{V}
+\]
+
+となる。
+
+今回作成した$h_{ie}$-$V_{BE}$特性より、
+$V_{BE}=0.666~\mathrm{V}$における小信号入力インピーダンスは
+$h_{ie}\approx2.3~\mathrm{k}\Omega$と推定できる。
+また、$I_B$-$V_{BE}$特性より$I_B\approx11~\mu\mathrm{A}$と読み取れる。
+さらに、$I_C$-$V_{CE}$特性より、
+各電流における特性曲線がほぼ等間隔に並んでいることから、
+$I_B\approx11~\mu\mathrm{A}$におけるコレクタ電流は
+$I_C\approx1.5~\mathrm{mA}$と推定できる。
+この$I_C$に対応する$h_{fe}$は、$h_{fe}$-$I_C$特性より
+$h_{fe}\approx139$と推定できる。
+
+
+\subsection{b}
+動画で使用したトランジスタ増幅回路の構成部品について、公称値および測定値を表\ref{tab:parts}に示す。
+\begin{table}[H]
+\centering
+\caption{トランジスタ増幅回路で使用する素子一覧}
+\label{tab:parts}
+\begin{tabular}{ccc}
+\toprule
+素子名 & 公称値 & 測定値 \\
+\midrule
+$R_1$ & $13~\mathrm{k}\Omega\pm 5 \% $ & $12.81~\mathrm{k}\Omega$\\
+$R_2$ & $62~\mathrm{k}\Omega\pm 5 \% $ & $61.1~\mathrm{k}\Omega$ \\
+$R_C$ & $3.0~\mathrm{k}\Omega\pm 5 \% $ & $2.968~\mathrm{k}\Omega$ \\
+$R_E$ & $1.0~\mathrm{k}\Omega\pm 5 \% $ & $0.984~\mathrm{k}\Omega $\\
+$R_L$ & $100~\mathrm{k}\Omega\pm 5 \% $ & -- \\
+$C_i$ & $10~\mu \mathrm{F}$ & $10.63~\mu \mathrm{F}$ \\
+$C_E$ & $100~\mu \mathrm{F}$ & -- \\
+$C_o$ & $10~\mu \mathrm{F}$ & $10.69~\mu \mathrm{F}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{c}
+
+\subsection*{(c) 直流負荷線および交流負荷線}
+
+(a)で求めた動作点は
+
+\[
+V_{CEQ}=7.780~\mathrm{V},\qquad
+I_{CQ}=1.83~\mathrm{mA}
+\]
+
+である。
+
+直流負荷線は，
+
+\begin{equation}
+V_{CC}=R_CI_C+V_{CE}+R_EI_E
+      \approx (R_C+R_E)I_C+V_{CE}    
+\end{equation}
+
+
+
+より，
+
+\begin{equation}
+    I_C=\frac{V_{CC}-V_{CE}}{R_C+R_E}
+\end{equation}
+
+
+となる。
+
+本実験では，
+
+\[
+V_{CC}=15~\mathrm{V},\quad
+R_C=2.968~\mathrm{k}\Omega,\quad
+R_E=0.984~\mathrm{k}\Omega
+\]
+
+より，直流負荷線を作成した。
+
+また，交流負荷線は
+\begin{equation}
+    i_c
+=
+-\frac{R_C+R_L}{R_CR_L}v_{ce}
+\end{equation}
+
+
+で表され，動作点を通るように$I_C$-$V_{CE}$特性上へ描いた。
+
+直流負荷線および交流負荷線を描いた結果を図\ref{fig:loadline}に示す。
+
 \end{document}
