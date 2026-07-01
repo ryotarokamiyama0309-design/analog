@@ -581,7 +581,15 @@ $h_{fe}\approx139$と推定できる。
 
 
 \subsection{b}
-動画で使用したトランジスタ増幅回路の構成部品について、公称値および測定値を表\ref{tab:parts}に示す。
+動画で使用したトランジスタ増幅回路の回路図を図\ref{fig:b}に示す。
+また、回路制製作しようした素子について、公称値および測定値を表\ref{tab:parts}に示す。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{b.png}
+    \caption{トランジスタ増幅回路の回路図}
+    \label{fig:b}
+\end{figure}
+
 \begin{table}[H]
 \centering
 \caption{トランジスタ増幅回路で使用する素子一覧}
@@ -608,34 +616,30 @@ $C_o$ & $10~\mu \mathrm{F}$ & $10.69~\mu \mathrm{F}$ \\
 
 \subsection*{(c) 直流負荷線および交流負荷線}
 
-(a)で求めた動作点は
+(a)で求めた動作点は、
 
 \[
-V_{CEQ}=7.780~\mathrm{V},\qquad
-I_{CQ}=1.83~\mathrm{mA}
+V_{CE}=7.780~\mathrm{V},\qquad
+I_C=1.5~\mathrm{mA}
 \]
 
 である。
-
-直流負荷線は，
+直流負荷線は、
 
 \begin{equation}
 V_{CC}=R_CI_C+V_{CE}+R_EI_E
-      \approx (R_C+R_E)I_C+V_{CE}    
+      \approx (R_C+R_E)I_C+V_{CE}
 \end{equation}
 
-
-
-より，
+より、
 
 \begin{equation}
-    I_C=\frac{V_{CC}-V_{CE}}{R_C+R_E}
+I_C=\frac{V_{CC}-V_{CE}}{R_C+R_E}
 \end{equation}
-
 
 となる。
 
-本実験では，
+本実験では、
 
 \[
 V_{CC}=15~\mathrm{V},\quad
@@ -643,18 +647,54 @@ R_C=2.968~\mathrm{k}\Omega,\quad
 R_E=0.984~\mathrm{k}\Omega
 \]
 
-より，直流負荷線を作成した。
+であるから，
 
-また，交流負荷線は
 \begin{equation}
-    i_c
+I_C
+=
+\frac{15-V_{CE}}
+{2.968+0.984}
+=
+\frac{15-V_{CE}}
+{3.952}
+\quad[\mathrm{mA}]
+\end{equation}
+
+となる。
+
+また、交流負荷線の傾きは、
+
+\begin{equation}
+i_c
 =
 -\frac{R_C+R_L}{R_CR_L}v_{ce}
 \end{equation}
 
+で表される。
 
-で表され，動作点を通るように$I_C$-$V_{CE}$特性上へ描いた。
+本実験で用いた負荷抵抗は
 
-直流負荷線および交流負荷線を描いた結果を図\ref{fig:loadline}に示す。
+\[
+R_L=100~\mathrm{k}\Omega
+\]
+
+であるから、
+
+\begin{equation}
+i_c
+=
+-\frac{2.968+100}{2.968\times100}v_{ce}
+=
+-0.3469\,v_{ce}
+\end{equation}
+
+となる。したがって、交流負荷線は傾き
+$-0.3469~\mathrm{mA/V}$をもち、
+動作点
+$(V_{CE},\,I_C)=(7.780~\mathrm{V},\,1.5~\mathrm{mA})$
+を通る直線として描いた。
+
+以上より求めた直流負荷線および交流負荷線を図\ref{fig:loadline}に示す。
+
 
 \end{document}
