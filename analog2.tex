@@ -179,7 +179,7 @@ $V_{CE}$と$I_C$の関係を記録した。
 
 
 \section{結果}
-\subsection{$I_B$-$V_{BE}$特性}
+\subsection{npn形バイポーラトランジスタの $I_{B}$-$V_{BE}$ 静特性測定}
 
 $V_{CE}=0~\mathrm{V}$および$7.5~\mathrm{V}$において測定した
 $I_B$-$V_{BE}$特性を表\ref{tab:ibvbe0}および表\ref{tab:ibvbe75}に示す。
@@ -187,8 +187,12 @@ $I_B$-$V_{BE}$特性を表\ref{tab:ibvbe0}および表\ref{tab:ibvbe75}に示す
 
 \begin{table}[H]
 \centering
-\caption{$V_{CE}=0$ Vにおける$I_B-V_{BE}$特性}
+
+\begin{minipage}[t]{0.47\textwidth}
+\centering
+\caption{$V_{CE}=0$ Vにおける$I_B$-$V_{BE}$特性}
 \label{tab:ibvbe0}
+\small
 \begin{tabular}{cc}
 \toprule
 $V_{BE}$ [V] & $I_B$ [$\mu$A]\\
@@ -218,12 +222,13 @@ $V_{BE}$ [V] & $I_B$ [$\mu$A]\\
 0.605 & 55.0\\
 \bottomrule
 \end{tabular}
-\end{table}
-
-\begin{table}[H]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
 \centering
-\caption{$V_{CE}=7.5$ Vにおける$I_B-V_{BE}$特性}
+\caption{$V_{CE}=7.5$ Vにおける$I_B$-$V_{BE}$特性}
 \label{tab:ibvbe75}
+\small
 \begin{tabular}{cc}
 \toprule
 $V_{BE}$ [V] & $I_B$ [$\mu$A]\\
@@ -253,6 +258,8 @@ $V_{BE}$ [V] & $I_B$ [$\mu$A]\\
 0.680 & 50.0\\
 \bottomrule
 \end{tabular}
+\end{minipage}
+
 \end{table}
 
 \begin{figure}[H]
@@ -310,7 +317,7 @@ $V_{BE}$ [V] & $h_{ie}$ [$\Omega$] \\
 \end{figure}
 
 
-\subsection{$I_C$-$V_{CE}$特性}
+\subsection{npn形バイポーラトランジスタの $I_{C}$-$V_{CE}$ 静特性測定}
 
 ベース電流$I_B$を5，10，15，20，25，30~$\mu$Aとした場合の
 $I_C$-$V_{CE}$特性の測定結果を表\ref{tab:icvce}に示す。
@@ -614,8 +621,6 @@ $C_o$ & $10~\mu \mathrm{F}$ & $10.69~\mu \mathrm{F}$ \\
 
 \subsection{c}
 
-\subsection*{(c) 直流負荷線および交流負荷線}
-
 (a)で求めた動作点は、
 
 \[
@@ -694,7 +699,14 @@ $-0.3469~\mathrm{mA/V}$をもち、
 $(V_{CE},\,I_C)=(7.780~\mathrm{V},\,1.5~\mathrm{mA})$
 を通る直線として描いた。
 
-以上より求めた直流負荷線および交流負荷線を図\ref{fig:loadline}に示す。
+以上の結果を用いて，$I_C$-$V_{CE}$特性上に直流負荷線および交流負荷線を描いた結果を図\ref{fig:loadline}に示す。
+ただし、直流負荷線は黄色、交流負荷線は青色で描いた。
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{loadline.png}
+\caption{$I_C$-$V_{CE}$特性上に描いた直流負荷線および交流負荷線}
+\label{fig:loadline}
+\end{figure}
 
 \end{document}
